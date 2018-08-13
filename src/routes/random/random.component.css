@@ -1,0 +1,64 @@
+.centerText {
+    text-align: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+}
+
+.headerShuffle {
+    display: flex;
+    align-items: center;
+}
+
+.randomizeImg {
+    width: 90vw;
+}
+
+.starWars {
+    text-align: center;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.swimg{
+    text-align: center;
+}
+
+.shuffleContainer {
+    display: flex;
+    flex: auto;
+    font-size: 30px;
+    margin-left: 20vw;
+    margin-right: 20vw;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    align-items: center;
+    justify-content: center;
+    background-color: #caad44;
+    color: white;
+}
+
+.starWarsLogo:hover {
+    background-color: rgba(202,172,68,0.3);
+    -webkit-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
+    box-shadow: 1px 1px 12px rgba(202,172,68,0.3);
+    border-radius: 3px;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .shuffleContainer {
+        display: flex;
+        flex: auto;
+        margin-left: 2vw;
+        margin-right: 2vw;
+        align-items: center;
+        justify-content: center;
+        background-color: #caad44;
+        color: white;
+        font-size: 20px;
+    }
+
+}

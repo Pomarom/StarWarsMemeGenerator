@@ -1,0 +1,19 @@
+<!--<div class="starWars">
+  <img src="assets/sw1.png" class="starWarsLogo" style="width: 20%; cursor: pointer;" (click)="getRandomMeme('I')">
+  <img src="assets/sw2.png" class="starWarsLogo" style="width: 20%; margin-left: 60px; margin-right: 60px; cursor: pointer;" (click)="getRandomMeme('II')">
+  <img src="assets/sw3.png" class="starWarsLogo" style="width: 20%; cursor: pointer;" (click)="getRandomMeme('III')">
+</div>-->
+<div class="headerShuffle">
+  <button class="shuffleContainer" (click)="getRandomMeme('I')">
+    <div>Get my random meme</div>
+    <img src="assets/shuffle.svg" style="width: 50px; margin-left: 20px;">
+  </button>
+</div>
+
+<div class="imgContainerSolo" *ngIf="imgService.currentImg">
+    <div>
+        <img src="assets/edit.svg" (click)="modalService.openModal(imgService.currentImg, imgService.currentName)" class="btnInsideBox" alt="Meme it"> 
+        <img src="assets/download.svg" (click)="imgService.downloadRawImage(imgService.currentImg, imgService.currentName)" class="btnInsideBox" alt="Download original">                          
+    </div>
+    <img [src]="imgService.currentImg" class="randomizeImg">
+</div>

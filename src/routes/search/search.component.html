@@ -1,0 +1,118 @@
+<div class="searchContainer">
+    <span class="mmperpage">Memes per page</span>
+    <select class="form-control" class="selectPerPage" required [(ngModel)]="imgService.nbPerPage" name="power">
+        <option *ngFor="let nb of pageSizeOptions" [value]="nb">{{nb}}</option>
+    </select>
+    <input type="text" placeholder="Search word (ex: hello there)" [(ngModel)]="searchTxt" class="searchBar" (keyup.enter)="getPicturesFromText(['I','II','III'], true)">
+    <button (click)="getPicturesFromText(['I','II','III'], true)" class="searchBtn">Search</button>
+    <div *ngIf="loading" class="sk-circle">
+        <div class="sk-circle1 sk-child"></div>
+        <div class="sk-circle2 sk-child"></div>
+        <div class="sk-circle3 sk-child"></div>
+        <div class="sk-circle4 sk-child"></div>
+        <div class="sk-circle5 sk-child"></div>
+        <div class="sk-circle6 sk-child"></div>
+        <div class="sk-circle7 sk-child"></div>
+        <div class="sk-circle8 sk-child"></div>
+        <div class="sk-circle9 sk-child"></div>
+        <div class="sk-circle10 sk-child"></div>
+        <div class="sk-circle11 sk-child"></div>
+        <div class="sk-circle12 sk-child"></div>
+    </div>
+    <div class="errMsg">{{err}}</div>
+</div>
+
+<!--<div *ngIf="loading" class="spinner">
+        <div class="cube1"></div>
+        <div class="cube2"></div>
+    </div>-->
+<div *ngIf="imgService.searchedImgs.I.length !== 0" class="totalPicture">
+    <img src="assets/sw1.png" class="swImg">
+    <div>{{this.imgService.totalImage.I}} memes found</div>
+</div>
+<div *ngIf="imgService.searchedImgs.I.length !== 0" class="swContainer">
+    <div fxLayout='row' fxLayoutWrap>
+        <div *ngFor="let img of imgService.searchedImgs.I;" fxFlex.lg="20" fxFlex.md="25" fxFlex.sm="100" class="item">
+            <div>
+                <img src="assets/edit.svg" (click)="modalService.openModal(img.src, img.avgTime, 'swI')" class="btnInsideBox" alt="Meme it">
+                <img src="assets/download.svg" (click)="imgService.downloadRawImage(img.src, img.avgTime, 'swI')" class="btnInsideBox" alt="Download original">
+            </div>
+            <div class="imgContainer">
+                <img [src]="img.src" class="imgClass">
+            </div>
+            <div class="sub" [innerHTML]="img.text"></div>
+        </div>
+    </div>
+    <div *ngIf="imgService.searchedImgs.I.length !== 0" fxLayout='row' fxLayoutAlign="end">
+        <div class="pagesInfo">
+            Pages {{imgService.page.I}} / {{ceil(this.imgService.totalImage.I / imgService.nbPerPage)}}
+        </div>
+        <div style="color: #caad44; font-size: 30px;">
+
+            <button [ngClass]="imgService.page.I === 1 ? 'disabledNavImgBtn' : 'navImgBtn'" (click)="previous('I')"><- Previous</button>
+            <button [ngClass]="imgService.page.I === ceil(imgService.totalImage.I / this.imgService.nbPerPage) ? 'disabledNavImgBtn' : 'navImgBtn'"
+                (click)="next('I')">Next     -> </button>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="imgService.searchedImgs.II.length !== 0" class="totalPicture">
+    <img src="assets/sw2.png" class="swImg">
+    <div>{{this.imgService.totalImage.II}} memes found</div>
+</div>
+<div *ngIf="imgService.searchedImgs.II.length !== 0" class="swContainer">
+    <div fxLayout='row' fxLayoutWrap>
+        <div *ngFor="let img of imgService.searchedImgs.II;" fxFlex.lg="20" fxFlex.md="25" fxFlex.sm="100" class="item">
+            <div>
+                <img src="assets/edit.svg" (click)="modalService.openModal(img.src, img.avgTime, 'swII')" class="btnInsideBox" alt="Meme it">
+                <img src="assets/download.svg" (click)="imgService.downloadRawImage(img.src, img.avgTime, 'swII')" class="btnInsideBox" alt="Download original">
+            </div>
+            <div class="imgContainer">
+                <img [src]="img.src" class="imgClass">
+            </div>
+            <div class="sub" [innerHTML]="img.text"></div>
+        </div>
+    </div>
+    <div *ngIf="imgService.searchedImgs.II.length !== 0" fxLayout='row' fxLayoutAlign="end">
+        <div class="pagesInfo">
+            Pages {{imgService.page.II}} / {{ceil(this.imgService.totalImage.II / imgService.nbPerPage)}}
+        </div>
+        <div style="color: #caad44; font-size: 30px;">
+
+            <button [ngClass]="imgService.page.II === 1 ? 'disabledNavImgBtn' : 'navImgBtn'" (click)="previous('II')"><- Previous</button>
+            <button [ngClass]="imgService.page.II === ceil(imgService.totalImage.II / this.imgService.nbPerPage) ? 'disabledNavImgBtn' : 'navImgBtn'"
+                (click)="next('II')">Next     -> </button>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="imgService.searchedImgs.III.length !== 0" class="totalPicture">
+    <img src="assets/sw3.png" class="swImg">
+    <div>{{this.imgService.totalImage.III}} memes found</div>
+</div>
+<div *ngIf="imgService.searchedImgs.III.length !== 0" class="swContainer">
+    <div fxLayout='row' fxLayoutWrap>
+        <div *ngFor="let img of imgService.searchedImgs.III;" fxFlex.lg="20" fxFlex.md="25" fxFlex.sm="100" class="item">
+            <div>
+                <img src="assets/edit.svg" (click)="modalService.openModal(img.src, img.avgTime, 'swIII')" class="btnInsideBox" alt="Meme it">
+                <img src="assets/download.svg" (click)="imgService.downloadRawImage(img.src, img.avgTime, 'swIII')" class="btnInsideBox"
+                    alt="Download original">
+            </div>
+            <div class="imgContainer">
+                <img [src]="img.src" class="imgClass">
+            </div>
+            <div class="sub" [innerHTML]="img.text"></div>
+        </div>
+    </div>
+    <div *ngIf="imgService.searchedImgs.III.length !== 0" fxLayout='row' fxLayoutAlign="end">
+        <div class="pagesInfo">
+            Pages {{imgService.page.III}} / {{ceil(this.imgService.totalImage.III / imgService.nbPerPage)}}
+        </div>
+        <div style="color: #caad44; font-size: 30px;">
+
+            <button [ngClass]="imgService.page.III === 1 ? 'disabledNavImgBtn' : 'navImgBtn'" (click)="previous('III')"><- Previous</button>
+            <button [ngClass]="imgService.page.III === ceil(imgService.totalImage.III / this.imgService.nbPerPage) ? 'disabledNavImgBtn' : 'navImgBtn'"
+                (click)="next('III')">Next     -> </button>
+        </div>
+    </div>
+</div>

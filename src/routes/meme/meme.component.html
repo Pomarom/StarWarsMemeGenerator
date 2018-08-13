@@ -1,0 +1,14 @@
+<div>
+    <div id="centseptproduction">
+        <div>
+            <textarea id="myplaceholder" autosize placeholder="Let's meme !" class="fitArea" rows="1" [(ngModel)]="text"></textarea>
+        </div>
+        <div >
+            <img [src]="img" class="fitImage">
+        </div>
+    </div>
+    <div style="text-align: center">
+        <button class="generateBtn" (click)="generate()">Generate meme</button>
+    </div>
+</div>
+

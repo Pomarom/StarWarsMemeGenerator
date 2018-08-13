@@ -9,5 +9,6 @@
   "exclude": [
     "test.ts",
     "**/*.spec.ts"
-  ]
+  ],
+  "includes": ["../node_modules/angular2-autosize"]
 }

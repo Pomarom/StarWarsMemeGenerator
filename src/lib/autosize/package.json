@@ -1,0 +1,60 @@
+{
+  "_from": "angular2-autosize",
+  "_id": "angular2-autosize@1.0.2",
+  "_inBundle": false,
+  "_integrity": "sha1-76Ew76ZUsg/X5THjmLH4BsmoR5Q=",
+  "_location": "/angular2-autosize",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "angular2-autosize",
+    "name": "angular2-autosize",
+    "escapedName": "angular2-autosize",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/angular2-autosize/-/angular2-autosize-1.0.2.tgz",
+  "_shasum": "efa130efa654b20fd7e531e398b1f806c9a84794",
+  "_spec": "angular2-autosize",
+  "_where": "/Users/paul/Dev/HelloThere/HelloThere2/HelloThere2",
+  "author": {
+    "name": "Steve Papa",
+    "email": "dev@stevepapa.com"
+  },
+  "bugs": {
+    "url": "https://github.com/stevepapa/angular2-autosize/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Directive that automatically adjusts textarea height to fit content",
+  "devDependencies": {
+    "@angular/core": "2.1.1",
+    "typescript": "^2.0.6"
+  },
+  "homepage": "https://github.com/stevepapa/angular2-autosize#readme",
+  "keywords": [
+    "ng2",
+    "angular",
+    "angular2",
+    "autosize",
+    "textarea",
+    "elastic",
+    "height",
+    "@angular"
+  ],
+  "license": "MIT",
+  "main": "angular2-autosize.ts",
+  "name": "angular2-autosize",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevepapa/angular2-autosize.git"
+  },
+  "scripts": {},
+  "version": "1.0.2"
+}
