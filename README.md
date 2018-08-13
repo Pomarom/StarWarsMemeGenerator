@@ -1,4 +1,8 @@
-# HelloThere2
+# StarWarsMemeGenerator
+
+![Alt Text](MemeGenerator.gif)
+Generate your favorite star wars meme (the prequel) directly from your browser !  
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.3.
 
